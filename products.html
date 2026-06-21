@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products | riveric™</title>
+    <meta name="description" content="View our complete premium catalog of pure, mineral-rich packaged drinking water and food products.">
+    <link rel="canonical" href="https://www.riveric.in/products.html" />
+    
+    <!-- Open Graph / Site Name & Thumbnail Fixes -->
+    <meta property="og:site_name" content="riveric">
+    <meta property="og:title" content="riveric™ Products | Complete Catalog">
+    <meta property="og:description" content="Explore the full range of riveric™ premium hydration and food solutions crafted for your well-being.">
+    <meta property="og:image" content="https://www.riveric.in/BANNER.jpeg">
+    <meta property="og:url" content="https://www.riveric.in/products.html">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon / Logo for Browser Tabs and Google Search -->
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    
+    <!-- Web App Manifest for "Add to Home Screen" -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0a192f">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=1.2.6">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #D4AF37;
+            --primary-hover: #b8962d;
+            --light-blue: #ebd89b;
+        }
+        body {
+            background: linear-gradient(rgba(11, 27, 61, 0.4), rgba(11, 27, 61, 0.6)), url('bg_core.jpeg') no-repeat center center fixed !important;
+            background-size: cover !important;
+        }
+        .products-page-header {
+            padding: 80px 0 40px;
+            background: transparent !important;
+        }
+        .cat-btn {
+            color: #ffffff !important;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        .cat-btn.active {
+            background: rgba(212, 175, 55, 0.15) !important;
+            color: #D4AF37 !important;
+        }
+        .cat-btn:hover {
+            color: #D4AF37 !important;
+        }
+        .products-page-header .section-title {
+            color: #D4AF37 !important;
+            font-family: 'Playfair Display', serif !important;
+            font-size: 3.2rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+        }
+        .products-page-header .section-subtitle {
+            color: #ebd89b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .product-card {
+            transition: all 0.4s ease;
+            background: rgba(11, 27, 61, 0.6) !important;
+            border-color: rgba(212, 175, 55, 0.2) !important;
+        }
+        .product-card:hover {
+            border-color: rgba(212, 175, 55, 0.8) !important;
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15) !important;
+        }
+        .product-card.hidden {
+            display: none !important;
+        }
+        @media (max-width: 768px) {
+            .products-page-header .section-title {
+                font-size: 2.2rem;
+            }
+            #coming-soon-message h2 {
+                font-size: 2rem !important;
+            }
+            .cat-btn {
+                font-size: 0.8rem;
+                padding: 8px 16px;
+                letter-spacing: 1px;
+            }
+            .category-filters {
+                gap: 10px !important;
+            }
+            .products-page-header {
+                padding: 50px 0 20px;
+            }
+        }
+        @media (max-width: 992px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 15px;
+            }
+            .product-card {
+                padding: 15px 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .product-card-img {
+                height: 120px !important;
+                width: auto !important;
+                margin-bottom: 10px !important;
+            }
+            .product-card-title {
+                font-size: 1rem;
+                margin-bottom: 5px;
+                line-height: 1.2;
+            }
+            .product-card-desc {
+                font-size: 0.8rem;
+                margin-bottom: 10px;
+            }
+            .product-card-features {
+                margin: 0 0 15px 0;
+            }
+            .product-card-features li {
+                font-size: 0.75rem;
+                margin-bottom: 4px;
+            }
+            .product-card .btn-outline {
+                padding: 8px 10px;
+                font-size: 0.8rem;
+                width: 100%;
+                margin-top: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Page Header -->
+    <section class="products-page-header">
+        <div class="container text-center">
+            <h2 class="section-title reveal slide-up">Our Complete Catalog</h2>
+            <p class="section-subtitle reveal slide-up">Explore our full range of premium hydration and food solutions crafted for your well-being.</p>
+        </div>
+    </section>
+
+    <!-- Top Categories / Filters -->
+    <div class="container text-center reveal slide-up" style="margin-bottom: 40px;">
+        <div class="category-filters" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 40px;">
+            <button class="cat-btn active" data-filter="all">ALL</button>
+            <button class="cat-btn" data-filter="classic">CLASSIC SERIES</button>
+            <button class="cat-btn" data-filter="premium">PREMIUM</button>
+            <button class="cat-btn" data-filter="soda" data-status="coming-soon">SODA</button>
+            <button class="cat-btn" data-filter="colddrink" data-status="coming-soon">COLDRINK</button>
+            <button class="cat-btn" data-filter="foods">FOODS</button>
+        </div>
+    </div>
+
+    <!-- Products Grid -->
+    <section class="section-padding" style="padding-top: 0;">
+        <div class="container">
+            <div id="coming-soon-message" style="display: none; text-align: center; width: 100%; padding: 100px 20px;">
+                <h2 style="color: #D4AF37; font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 900; letter-spacing: 2px;">Coming Soon!</h2>
+                <p style="color: #ffffff; font-size: 1.2rem; margin-top: 15px;">We are currently crafting this collection. Stay tuned!</p>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                
+                <!-- Product 1: Classic -->
+                <div class="product-card reveal slide-up" data-category="classic">
+                    <img src="removed_bg_bottle.png" alt="riveric 200ml" class="product-card-img">
+                    <h3 class="product-card-title">riveric 200ml</h3>
+                    <p class="product-card-desc">Case of 24 Bottles</p>
+                    <ul class="product-card-features">
+                        <li>Mineral-Rich Water</li>
+                        <li>Premium Quality</li>
+                        <li>Ideal for events</li>
+                    </ul>
+                    <a href="https://wa.me/919471491032?text=Hi%20riveric!%20I%20would%20like%20to%20order%20the%20200ml%20Classic." target="_blank" class="btn btn-outline" style="width: 100%;">Order Now</a>
+                </div>
+
+                <!-- Product 2: Classic -->
+                <div class="product-card reveal slide-up" data-category="classic" style="transition-delay: 0.1s;">
+                    <img src="removed_bg_bottle.png" alt="riveric 500ml" class="product-card-img">
+                    <h3 class="product-card-title">riveric 500ml</h3>
+                    <p class="product-card-desc">Case of 12 Bottles</p>
+                    <ul class="product-card-features">
+                        <li>Perfect for meals</li>
+                        <li>Easy to carry</li>
+                        <li>Daily hydration</li>
+                    </ul>
+                    <a href="https://wa.me/919471491032?text=Hi%20riveric!%20I%20would%20like%20to%20order%20the%20500ml%20Classic." target="_blank" class="btn btn-outline" style="width: 100%;">Order Now</a>
+                </div>
+
+                <!-- Product 3: Classic -->
+                <div class="product-card reveal slide-up" data-category="classic" style="transition-delay: 0.2s;">
+                    <img src="removed_bg_bottle.png" alt="riveric 1 Litre" class="product-card-img">
+                    <h3 class="product-card-title">riveric 1 Litre</h3>
+                    <p class="product-card-desc">Case of 12 Bottles</p>
+                    <ul class="product-card-features">
+                        <li>Family size</li>
+                        <li>Workout companion</li>
+                        <li>All-day hydration</li>
+                    </ul>
+                    <a href="https://wa.me/919471491032?text=Hi%20riveric!%20I%20would%20like%20to%20order%20the%201L%20Classic." target="_blank" class="btn btn-outline" style="width: 100%;">Order Now</a>
+                </div>
+
+                <!-- Product 4: Premium -->
+                <div class="product-card reveal slide-up" data-category="premium">
+                    <img src="bottle_bg3_removed.png" alt="riveric 200ml Premium" class="product-card-img">
+                    <h3 class="product-card-title">200ml Premium</h3>
+                    <p class="product-card-desc">Case of 24 Bottles</p>
+                    <ul class="product-card-features">
+                        <li>Luxury dining</li>
+                        <li>Elegant bottle</li>
+                        <li>Superior taste</li>
+                    </ul>
+                    <a href="https://wa.me/919471491032?text=Hi%20riveric!%20I%20would%20like%20to%20order%20the%20200ml%20Premium." target="_blank" class="btn btn-outline" style="width: 100%;">Order Now</a>
+                </div>
+
+                <!-- Product 5: Premium -->
+                <div class="product-card reveal slide-up" data-category="premium" style="transition-delay: 0.1s;">
+                    <img src="bottle_bg3_removed.png" alt="riveric 500ml Premium" class="product-card-img">
+                    <h3 class="product-card-title">500ml Premium</h3>
+                    <p class="product-card-desc">Case of 12 Bottles</p>
+                    <ul class="product-card-features">
+                        <li>Corporate events</li>
+                        <li>Distinctive design</li>
+                        <li>Purest source</li>
+                    </ul>
+                    <a href="https://wa.me/919471491032?text=Hi%20riveric!%20I%20would%20like%20to%20order%20the%20500ml%20Premium." target="_blank" class="btn btn-outline" style="width: 100%;">Order Now</a>
+                </div>
+
+                <!-- Product 6: Premium -->
+                <div class="product-card reveal slide-up" data-category="premium" style="transition-delay: 0.2s;">
+                    <img src="bottle_bg3_removed.png" alt="riveric 1 Litre Premium" class="product-card-img">
+                    <h3 class="product-card-title">1 Litre Premium</h3>
+                    <p class="product-card-desc">Case of 12 Bottles</p>
+                    <ul class="product-card-features">
+                        <li>Ultimate Hydration</li>
+                        <li>Premium Hospitality</li>
+                        <li>Distinctive Bottle</li>
+                    </ul>
+                    <a href="https://wa.me/919471491032?text=Hi%20riveric!%20I%20would%20like%20to%20order%20the%201L%20Premium." target="_blank" class="btn btn-outline" style="width: 100%;">Order Now</a>
+                </div>
+
+                <!-- Product 7: Foods -->
+                <div class="product-card reveal slide-up" data-category="foods">
+                    <img src="noodles.png" alt="riveric Foods (Half)" class="product-card-img">
+                    <h3 class="product-card-title">Foods (Half)</h3>
+                    <p class="product-card-desc">Perfect Snack</p>
+                    <ul class="product-card-features">
+                        <li>Delicious Taste</li>
+                        <li>Authentic Flavors</li>
+                        <li>Quick & Easy</li>
+                    </ul>
+                    <a href="https://wa.me/919471491032?text=Hi%20riveric!%20I%20would%20like%20to%20order%20Foods%20(Half)." target="_blank" class="btn btn-outline" style="width: 100%;">Order Now</a>
+                </div>
+
+                <!-- Product 8: Foods -->
+                <div class="product-card reveal slide-up" data-category="foods" style="transition-delay: 0.1s;">
+                    <img src="noodles.png" alt="riveric Foods (Full)" class="product-card-img">
+                    <h3 class="product-card-title">Foods (Full)</h3>
+                    <p class="product-card-desc">Satisfying Portion</p>
+                    <ul class="product-card-features">
+                        <li>Full Meal</li>
+                        <li>Extra Spices</li>
+                        <li>Fresh Ingredients</li>
+                    </ul>
+                    <a href="https://wa.me/919471491032?text=Hi%20riveric!%20I%20would%20like%20to%20order%20Foods%20(Full)." target="_blank" class="btn btn-outline" style="width: 100%;">Order Now</a>
+                </div>
+
+            </div>
+            
+            <!-- Bigger Back Button at Bottom -->
+            <div class="text-center reveal slide-up" style="margin-top: 60px;">
+                <a href="index.html?return=true#products" class="btn btn-outline" style="font-size: 1.4rem; padding: 15px 40px; display: inline-flex; align-items: center; gap: 15px; border-width: 2px;">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Mobile Floating Action Button -->
+    <a href="https://wa.me/919471491032?text=Hi%20riveric!%20I%20would%20like%20to%20order%20premium%20water." 
+       target="_blank" class="mobile-fab">
+        <i class="fab fa-whatsapp"></i>
+        <span>Order Now</span>
+    </a>
+
+    <!-- Filtering & Animation Script -->
+    <script>
+        // Reveal animations on load/scroll
+        const reveals = document.querySelectorAll('.reveal');
+        function reveal() {
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const elementVisible = 50;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+        window.addEventListener('scroll', reveal);
+        setTimeout(reveal, 100);
+
+        // Product Filtering Logic
+        const filterBtns = document.querySelectorAll('.cat-btn');
+        const productCards = document.querySelectorAll('.product-card');
+        const comingSoonMsg = document.getElementById('coming-soon-message');
+        const productsGrid = document.querySelector('.products-grid');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+
+                const filterValue = this.getAttribute('data-filter');
+                const isComingSoon = this.getAttribute('data-status') === 'coming-soon';
+
+                if (isComingSoon) {
+                    productsGrid.style.display = 'none';
+                    comingSoonMsg.style.display = 'block';
+                } else {
+                    productsGrid.style.display = 'grid';
+                    comingSoonMsg.style.display = 'none';
+                    
+                    // Filter products
+                    productCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+                        
+                        if (filterValue === 'all' || filterValue === cardCategory) {
+                            card.classList.remove('hidden');
+                            // Retrigger reveal animation for filtered items
+                            setTimeout(() => {
+                                card.classList.add('active');
+                            }, 50);
+                        } else {
+                            card.classList.remove('active');
+                            card.classList.add('hidden');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
